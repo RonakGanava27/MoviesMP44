@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Movie Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f8b400;
+        }
+
+        .movies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .movie-box {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .movie-box:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .movie-thumbnail {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-box:hover .movie-thumbnail {
+            transform: scale(1.05);
+        }
+
+        .movie-content h2 {
+            font-size: 1.4rem;
+            margin: 10px 0 5px;
+            color: #f8b400;
+        }
+
+        .movie-content p {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            .movies {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .movie-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .movie-thumbnail {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Movie Collection</h1>
+        <div class="movies">
+
+            <!-- Movie 1 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1lofwhTqQNb2W1byhEL9A1JfT7scP-xkU/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="Kabir.jpg" alt="Kabir Singh">
+                <div class="movie-content">
+                    <h2>Kabir Singh</h2>
+                    <p>An intense love story of passion and madness.</p>
+                </div>
+            </div>
+
+            <!-- Movie 2 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1s4p0687nI1uatkvvMLu5zqe0GA4yX5Bh/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="RoackStarjpg.jpg" alt="Rockstar">
+                <div class="movie-content">
+                    <h2>Rockstar</h2>
+                    <p>A musical journey of love and self-discovery.</p>
+                </div>
+            </div>
+
+            <!-- Movie 3 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1YhqYsgRgrOvEGV68LEwpDOPlyifRxqH_/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="yeh-jawaani-hai-deewani-1-sixteen_nine.jpg" alt="Yeh Jawaani Hai Deewani">
+                <div class="movie-content">
+                    <h2>YJHD</h2>
+                    <p>A tale of friendship, love, and dreams.</p>
+                </div>
+            </div>
+
+            <!-- Movie 4 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1Mu0J8O09UlvAJEHHWKucfp-QZ202BQsx/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="ShreeNivasa.jpg" alt="Srinivasa Kalyanam">
+                <div class="movie-content">
+                    <h2>Srinivasa Kalyanam</h2>
+                    <p>A heartwarming family drama.</p>
+                </div>
+            </div>
+
+            <!-- Movie 5 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1NhfYXscK1nRIwXFadlxAmXmAqvhTCFBi/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="DILBECHARA.jpg" alt="Dil Bechara">
+                <div class="movie-content">
+                    <h2>Dil Bechara</h2>
+                    <p>A touching love story based on "The Fault in Our Stars."</p>
+                </div>
+            </div>
+
+            <!-- Movie 6 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1WehH2aSCBEJnUWwA7Qu_MPJi_pd2U96w/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="Chichore.jpg" alt="Chhichhore">
+                <div class="movie-content">
+                    <h2>Chhichhore</h2>
+                    <p>A nostalgic journey of friendship and college life.</p>
+                </div>
+            </div>
+
+            <!-- Movie 7 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1OPLxW_nfNH52xwVwPEeiS9oklFJUQCEf/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="Kedarnath.Jpg" alt="Kedarnath">
+                <div class="movie-content">
+                    <h2>Kedarnath</h2>
+                    <p>A love story set against the Uttarakhand floods.</p>
+                </div>
+            </div>
+
+            <!-- Movie 8 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1D0LsoLzZI9y0p6LTEdaMPqvXSI77rOAh/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="2STATES.jpg" alt="2 States">
+                <div class="movie-content">
+                    <h2>2 States</h2>
+                    <p>A cross-cultural love story based on Chetan Bhagat's novel.</p>
+                </div>
+            </div>
+
+            <!-- Movie 9 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/13zKS_eZIBbytqIekkKo6N-UU4EBvLYKh/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="ANGREJI.jpg" alt="Angrezi Medium">
+                <div class="movie-content">
+                    <h2>Angrezi Medium</h2>
+                    <p>A father-daughter journey about dreams and education.</p>
+                </div>
+            </div>
+
+            <!-- Movie 10 -->
+            <div class="movie-box" onclick="playMovie('//drive.google.com/file/d/1LyTynB-cnvPIJN0TRnIdoNUVDUr2HSdI/view?usp=drive_link')">
+                <img class="movie-thumbnail" src="BabyDriver.jpg" alt="Baby Driver">
+                <div class="movie-content">
+                    <h2>Baby Driver</h2>
+                    <p>A thrilling ride of a getaway driver with killer beats.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function playMovie(movieUrl) {
+            window.open(movieUrl, "_blank");
+        }
+    </script>
+</body>
+</html>
